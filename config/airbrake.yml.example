@@ -1,0 +1,4 @@
+---
+api_key   : yourairbrakeapikeypwshouldbehere
+host      : api.airbrake.io
+port      : 80
