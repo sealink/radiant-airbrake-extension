@@ -30,7 +30,7 @@ module AirbrakeTags
       Airbrake.setKey("#{Airbrake.configuration.api_key}");
       Airbrake.setHost("#{Airbrake.configuration.host}");
       Airbrake.setEnvironment("#{Airbrake.configuration.environment_name}");
-      Airbrake.setErrorDefaults({ url: "#{request.url}", component: "#{request.parameters["controller"]}", action: "#{request.parameters["action"]}" });
+      Airbrake.setErrorDefaults({ url: "#{h(request.url)}", component: "#{request.parameters["controller"]}", action: "#{request.parameters["action"]}" });
 
   //]]>
   </script>
