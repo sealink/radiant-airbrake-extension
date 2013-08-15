@@ -11,7 +11,7 @@ module AirbrakeTags
   '
   tag "airbrake_javascript_notifier" do |tag|
     request = tag.globals.page.request
-<<-EOF
+    js = <<-EOF
   <script type="text/javascript">
   //<![CDATA[
 
@@ -35,6 +35,7 @@ module AirbrakeTags
   //]]>
   </script>
 EOF
+    js.html_safe
   end
 
 end
