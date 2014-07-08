@@ -10,6 +10,7 @@ module AirbrakeTags
       </code></pre>
   '
   tag "airbrake_javascript_notifier" do |tag|
+    return '' if defined?(Rails) && Rails.env.development?
     request = tag.globals.page.request
     js = <<-EOF
   <script type="text/javascript">
