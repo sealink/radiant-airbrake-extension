@@ -16,7 +16,10 @@ module AirbrakeTags
   //<![CDATA[
 
     (function(){
-      document.write(unescape("%3Cscript src='/javascripts/notifier.js' type='text/javascript'%3E%3C/script%3E"));
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName("script")[0];
+      a.src="/javascripts/notifier.js";
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b);}, 1);
     })();
 
   //]]>
@@ -25,7 +28,7 @@ module AirbrakeTags
   <script type="text/javascript">
   //<![CDATA[
 
-      window.Airbrake = (typeof(Airbrake) == 'undefined' && typeof(Hoptoad) != 'undefined') ? Hoptoad : Airbrake
+      window.Airbrake = (typeof(Airbrake) == 'undefined' && typeof(Hoptoad) != 'undefined') ? Hoptoad : Airbrake;
 
       Airbrake.setKey("#{Airbrake.configuration.api_key}");
       Airbrake.setHost("#{Airbrake.configuration.host}");
