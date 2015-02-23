@@ -1,5 +1,9 @@
 # Uncomment this if you reference any of your controllers in activate
 # require_dependency 'application_controller'
+
+# Need this for 'config_exists?'
+require 'radiant_extension_helper'
+
 class AirbrakeExtension < Radiant::Extension
   version "1.0"
   description "Extension to handle server-side/client-side integration of Airbrake/Hoptoad."
